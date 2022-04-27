@@ -1,0 +1,279 @@
+* {box-sizing: border-box;}
+
+body {
+    height: 100vh;
+    background: #6E5C62;
+}
+
+header {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 28vh;
+}
+
+.header-container {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 720px;
+    height: 100%;
+}
+
+.header-container span, .letterBox {
+    color: white;
+    font-family: 'Mitr', sans-serif;
+    font-weight: 600;
+    font-size: 38px;
+}
+
+.header-container .menu-button {
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    border: 2px solid #b7aeb4;
+    border-radius: 5px;
+}
+
+#arrow {
+    transition: 0.8s;
+}
+
+.header-container .left-menu, .header-container .right-menu {
+    display: flex;
+    gap: 5px;
+}
+
+.menu-button {
+    color: #b7aeb4;
+}
+
+.left-menu span {
+    color: #b7aeb4;
+    font-family: 'Mitr', sans-serif;
+    font-size: 20px;
+}
+
+.words {
+    width: 420px;
+    height: 510px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.flip-container {
+    font-family: 'Mitr', sans-serif;
+    font-weight: 600;
+    font-size: 54px;
+    position: relative;
+    width: 79px;
+    height: 79px;
+}
+
+.flipper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+.letterBox {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: #615458;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 54px;
+    backface-visibility: hidden;
+}
+
+.back {
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: black;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+.typefree {
+    border: 6px solid #4c4347;
+    background: transparent;
+}
+
+.active {
+    border-bottom: 12px solid #4c4347;
+    transition: transform 0.05s ease-out;
+}
+
+.keyboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.a, .b, .c {
+    display: flex;
+    gap: 7px;
+}
+
+.a {
+    margin-left: -50px;
+}
+
+.b {
+    margin-left: 25px;
+}
+
+.c {
+    margin-left: 50px;
+}
+
+.keyboard span {
+    cursor: pointer;
+    position: relative;
+    font-family: 'Mitr', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    display: grid;
+    place-items: center;
+    height: 72px;
+    width: 58px;
+    background: #4c4347;
+    border-radius: 7px;
+    color: white;
+}
+
+.keyboard button {
+    cursor: pointer;
+}
+
+.keyboard .b button {
+    height: 72px;
+    width: 62px !important;
+    font-size: 26px;
+    margin-left: 20px;
+    border-radius: 7px;
+    background: #4c4347;
+    border: none;
+    width: 50px;
+    color: white;
+}
+
+.keyboard .c button {
+    font-family: 'Mitr', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: white;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    width: 170px;
+    background: #4c4347;
+}
+
+.rigth-letter {
+    background: #3aa394;
+    border: none;
+}
+
+.wrongPlace-letter {
+    background: #d3ad69;
+    border: none;
+}
+
+.failed-letter {
+    background-color: #312a2c;
+    border: none;
+}
+
+footer #author {
+    margin-top: 10px;
+    font-family: 'Fredoka One', cursive;
+    display: block;
+    color: white;
+}
+
+@media only screen and (max-width: 710px) {
+    .keyboard span {
+        height: 59px;
+        width: 38px;
+    }
+
+    .keyboard .b button {
+        height: 59px;
+        width: 42px !important;
+    }
+
+    .keyboard .c button {
+        width: 130px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .keyboard span {
+        height: 59px;
+        width: 38px;
+    }
+
+    .keyboard .a, .keyboard .b, .keyboard .c {
+        margin-left: 0;
+    }
+
+    .keyboard .b button {
+        margin-left: 0;
+        height: 59px;
+        width: 42px !important;
+    }
+
+    .keyboard .c button {
+        margin-left: 0;
+        width: 110px;
+    }
+}
