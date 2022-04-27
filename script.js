@@ -45,7 +45,9 @@ function backspace() {
     if (activeIndex > -1) {
         actualRow[activeIndex].innerText = '';
         submitted[activeIndex] = '';
-        actualRow[activeIndex + 1].classList.remove('active');
+        if (activeIndex < 4) {
+            actualRow[activeIndex + 1].classList.remove('active');
+        }
         actualRow[activeIndex].classList.add('active');
         activeIndex--;
     }

@@ -39,6 +39,7 @@ footer {
 }
 
 .header-container span, .letterBox {
+    user-select: none;
     color: white;
     font-family: 'Mitr', sans-serif;
     font-weight: 600;
@@ -91,6 +92,7 @@ footer {
 }
 
 .flip-container {
+    user-select: none;
     font-family: 'Mitr', sans-serif;
     font-weight: 600;
     font-size: 54px;
@@ -133,13 +135,6 @@ footer {
     transform: rotateY(180deg);
 }
 
-
-
-
-
-
-
-
 .typefree {
     border: 6px solid #4c4347;
     background: transparent;
@@ -176,6 +171,7 @@ footer {
 }
 
 .keyboard span {
+    user-select: none;
     cursor: pointer;
     position: relative;
     font-family: 'Mitr', sans-serif;
