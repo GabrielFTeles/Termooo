@@ -236,7 +236,7 @@ footer #author {
     color: white;
 }
 
-@media only screen and (max-width: 710px) {
+@media screen and (max-width: 710px) {
     .keyboard span {
         height: 59px;
         width: 38px;
@@ -252,7 +252,7 @@ footer #author {
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media screen and (max-width: 520px) {
     .keyboard span {
         height: 59px;
         width: 38px;

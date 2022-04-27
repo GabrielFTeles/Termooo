@@ -7,7 +7,7 @@ let actualBackRow   = document.querySelectorAll('#row-1 .back');
 
 const key = document.querySelectorAll('.keyboard span');
 
-const words = ['perna', 'carro', 'porta', 'sagaz', 'mexer', 'negro', 'termo', 'senso', 'nobre', 'afeto', 'plena', 'sutil', 'fazer', 'ideia', 'moral', 'sobre', 'sonho', 'etnia', 'amigo', 'casal', 'pesar', 'digno', 'saber', 'manso', 'mundo', 'culto', 'comum', 'louco', 'criar', 'servo', 'prosa', 'temor', 'honra', 'justo', 'tempo', 'ceder', 'pedir', 'ordem', 'regra', 'forte', 'feliz', 'coisa', 'homem', 'falar', 'vendo', 'temer', 'acaso', 'valor', 'lugar', 'ontem'];
+const words    = ['perna', 'carro', 'porta', 'sagaz', 'mexer', 'negro', 'termo', 'senso', 'nobre', 'afeto', 'plena', 'sutil', 'fazer', 'ideia', 'moral', 'sobre', 'sonho', 'etnia', 'amigo', 'casal', 'pesar', 'digno', 'saber', 'manso', 'mundo', 'culto', 'comum', 'louco', 'criar', 'servo', 'prosa', 'temor', 'honra', 'justo', 'tempo', 'ceder', 'pedir', 'ordem', 'regra', 'forte', 'feliz', 'coisa', 'homem', 'falar', 'vendo', 'temer', 'acaso', 'valor', 'lugar', 'ontem'];
 
 const rightLetters = [];
 let submitted      = ['','','','',''];
@@ -78,17 +78,17 @@ function verifySubmit() {
             }
         }
 
-        if (isThisLetterInArray === true) {
+        if (isThisLetterInArray) {
             wrongPlaceColor(i)
         } else {
             failColor(i)
         }
         i++;
     }
+
     actualRow.forEach((tf) => {
         tf.classList.remove('typefree');
     })
-
 
     rotateCards();
 
@@ -96,7 +96,13 @@ function verifySubmit() {
         rotateCards();
         return;
     }
+
+    goToNextRow();
     
+    clearSubmitted();
+}
+
+function goToNextRow() {
     if (actualRowID < 6) {
         actualRowID++;
         actualRow     = document.querySelectorAll(`#row-${actualRowID} .letterBox`);
@@ -108,9 +114,11 @@ function verifySubmit() {
         });
 
         actualRow[0].classList.add('active');
-    
-        submitted = ['', '', '', '', '']
     }
+}
+
+function clearSubmitted() {
+    submitted = ['', '', '', '', '']
 }
 
 function rotateCards() {
@@ -148,13 +156,13 @@ function typeKey(k) {
             actualActive = ar;
             activeIndex = i;
         }
-        if (isThereAnyActive === true) {
+        if (isThereAnyActive) {
             submitted[activeIndex] = k.toLowerCase();
         }
         i++;
     });
 
-    if (isThereAnyActive === true) {
+    if (isThereAnyActive) {
         actualActive.style.transform = 'scale(1.1)';
         setTimeout(() => {
             actualActive.style.transform = 'scale(1)'
