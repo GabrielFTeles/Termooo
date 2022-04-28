@@ -344,6 +344,10 @@ footer #author {
         gap: 2px;
     }
 
+    footer {
+        height: 10vh;
+    }
+
     .keyboard span {
         font-size: 20px;
         height: 39px;
