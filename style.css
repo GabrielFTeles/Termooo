@@ -301,6 +301,10 @@ footer #author {
         font-size: 36px;
     }
 
+    footer {
+        height: 20vh;
+    }
+
     .keyboard span {
         font-size: 20px;
         height: 42px;
@@ -313,6 +317,9 @@ footer #author {
 
     .keyboard .b button {
         margin-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         height: 39px;
         width: 42px !important;
     }
