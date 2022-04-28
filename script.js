@@ -14,6 +14,7 @@ let submitted      = ['','','','',''];
 
 let historySubmitted;
 let activeIndex;
+let isGameOver = false;
 
 getRandomWord();
 
@@ -24,6 +25,10 @@ key.forEach((k) => {
 })
 
 function selectLetterBox(event){
+    if (isGameOver) {
+        return;
+    }
+
     if (!event.target.classList.contains('active') && event.target.classList.contains('typefree')) {
         event.target.classList.toggle('active');
         letterBox.forEach((box) => {
@@ -42,6 +47,10 @@ function getRandomWord() {
 }
 
 function backspace() {
+    if (isGameOver) {
+        return;
+    }
+
     if (activeIndex > -1) {
         actualRow[activeIndex].innerText = '';
         submitted[activeIndex] = '';
@@ -54,12 +63,16 @@ function backspace() {
 }
 
 function verifySubmit() {
-    flippers = document.querySelectorAll(`#row-${actualRowID} .flipper`);
+    if (isGameOver) {
+        return;
+    }
 
     if (submitted.indexOf('') != -1) {
         return;
     }
 
+    flippers = document.querySelectorAll(`#row-${actualRowID} .flipper`);
+    
     historySubmitted = actualBackRow;
     let corrects = 0;
     let i = 0;
@@ -94,6 +107,7 @@ function verifySubmit() {
 
     if (corrects === 5) {
         rotateCards();
+        isGameOver = true;
         return;
     }
 
@@ -114,6 +128,9 @@ function goToNextRow() {
         });
 
         actualRow[0].classList.add('active');
+        activeIndex = 0;
+    } else {
+        isGameOver = true;
     }
 }
 
@@ -122,10 +139,11 @@ function clearSubmitted() {
 }
 
 function rotateCards() {
+    let rotateElementsArray = flippers;
     let iC = 0;
     let interval = setInterval(() => {
         if (iC < 5) {
-            flippers[iC].style.transform = 'rotateY(180deg)';
+            rotateElementsArray[iC].style.transform = 'rotateY(180deg)';
             iC++;
         } else {
             clearInterval(interval);
@@ -146,6 +164,11 @@ function failColor(i) {
 }
 
 function typeKey(k) {
+    if (isGameOver) {
+        return;
+    }
+
+
     let isThereAnyActive = false;
     let actualActive;
 
