@@ -76,7 +76,8 @@ footer {
 }
 
 .words {
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     height: 510px;
     margin-bottom: 15px;
     display: flex;
@@ -237,22 +238,38 @@ footer #author {
 }
 
 @media screen and (max-width: 710px) {
-    .keyboard span {
+    .flip-container {
         height: 59px;
+        width: 59px;
+    }
+
+    .keyboard span {
+        height: 49px;
         width: 38px;
     }
 
+    .keyboard .a, .keyboard .b, .keyboard .c {
+        margin-left: 0;
+    }
+
     .keyboard .b button {
+        margin-left: 0;
         height: 59px;
         width: 42px !important;
     }
 
     .keyboard .c button {
-        width: 130px;
+        margin-left: 0;
+        width: 90px;
     }
 }
 
 @media screen and (max-width: 520px) {
+    .flip-container {
+        height: 59px;
+        width: 59px;
+    }
+
     .keyboard span {
         height: 59px;
         width: 38px;
@@ -270,6 +287,75 @@ footer #author {
 
     .keyboard .c button {
         margin-left: 0;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 457px) {
+    .flip-container {
+        height: 59px;
+        width: 59px;
+    }
+
+    .flipper {
+        font-size: 36px;
+    }
+
+    .keyboard span {
+        font-size: 20px;
+        height: 42px;
+        width: 29px;
+    }
+
+    .keyboard .a, .keyboard .b, .keyboard .c {
+        margin-left: 0;
+    }
+
+    .keyboard .b button {
+        margin-left: 0;
+        height: 39px;
+        width: 42px !important;
+    }
+
+    .keyboard .c button {
+        margin-left: 0;
         width: 110px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .flip-container {
+        height: 39px;
+        width: 39px;
+    }
+
+    .flipper {
+        font-size: 36px;
+    }
+
+    .keyboard {
+        gap: 2px;
+    }
+
+    .keyboard span {
+        font-size: 20px;
+        height: 39px;
+        width: 28px;
+    }
+
+    .keyboard .a, .keyboard .b, .keyboard .c {
+        gap: 3px;
+    }
+
+    .keyboard .b button {
+        margin-left: 0;
+        height: 39px;
+        width: 42px !important;
+    }
+
+    .keyboard .c button {
+        margin-left: 0;
+        font-size: 16px;
+        width: 80px;
     }
 }
