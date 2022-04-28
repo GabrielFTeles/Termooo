@@ -243,6 +243,14 @@ footer #author {
         width: 59px;
     }
 
+    .flipper {
+        font-size: 30px;
+    }
+
+    .letterBox {
+        font-size: 30px;
+    }
+
     .keyboard span {
         height: 49px;
         width: 38px;
@@ -337,7 +345,7 @@ footer #author {
     }
 
     .flipper {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .keyboard {
