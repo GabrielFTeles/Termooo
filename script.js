@@ -74,6 +74,7 @@ function verifySubmit() {
     flippers = document.querySelectorAll(`#row-${actualRowID} .flipper`);
     
     historySubmitted = actualBackRow;
+
     let corrects = 0;
     let i = 0;
     for (let letter of submitted) {
@@ -106,6 +107,11 @@ function verifySubmit() {
     rotateCards();
 
     if (corrects === 5) {
+        actualRow.forEach((ar) => {
+            if(ar.classList.contains('active')) {
+                ar.classList.remove('active');
+            };
+        });
         rotateCards();
         isGameOver = true;
         return;
